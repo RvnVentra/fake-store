@@ -73,4 +73,5 @@ export const NavbarContainer = styled.div`
         border: 1px solid lightgreen;
         border-radius: 5px;
     };
+    margin-bottom: 15px;
 `;

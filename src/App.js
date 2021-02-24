@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Items from './components/Items/Items';
 export default class App extends Component {
   state = {
     searchInput: '',
@@ -25,6 +27,8 @@ export default class App extends Component {
           clearInputHandler={this.clearSearchInputHandler}
         />
         {this.state.searchInput}
+        <Items />
+        <Footer />
       </div>
     );
   };
