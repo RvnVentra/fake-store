@@ -26,4 +26,8 @@ export const ItemTitle = styled.h1`
 
 export const ItemPrice = styled.p`
     text-decoration: underline;
+    ${ItemContainer}:hover & {
+        color: red;
+        cursor: pointer;
+    };
 `;

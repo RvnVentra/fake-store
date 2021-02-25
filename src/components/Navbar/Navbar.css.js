@@ -72,6 +72,7 @@ export const NavbarContainer = styled.div`
         background-size: cover;
         border: 1px solid lightgreen;
         border-radius: 5px;
+        outline: none;
     };
     margin-bottom: 15px;
 `;
