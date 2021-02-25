@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
-import { ItemContainer, ItemImage } from './Item.css';
+import { 
+    ItemContainer, 
+    ItemImage,
+    ItemTitle,
+    ItemPrice,
+} from './Item.css';
 
 export default class Item extends Component {
     render() {
@@ -8,9 +13,9 @@ export default class Item extends Component {
             return (
                 <ItemContainer key={item.id}>
                     <ItemImage src={item.image} />
-                    <p>{item.title}</p>
-                    <p>{item.price}</p>
-                    <p>{item.description}</p>
+                    <ItemTitle>{item.title}</ItemTitle>
+                    <ItemPrice>${item.price.toFixed(2)}</ItemPrice>
+                    {/* <p>{item.description}</p> */}
                 </ItemContainer>
             );
         });

@@ -4,12 +4,26 @@ export const ItemContainer = styled.div`
     border: 1px dotted black;
     box-shadow: 1.5px 1px 1.5px 1px #888888;
     margin: 5px;
-    text-align: center;
     width: 30%;
-    height: 350px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 `;
 
 export const ItemImage = styled.img`
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
+`;
+
+export const ItemTitle = styled.h1`
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0px 10px;
+`;
+
+export const ItemPrice = styled.p`
+    text-decoration: underline;
 `;
