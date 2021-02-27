@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import Items from './components/Items/Items';
 
-import { SidebarContainer } from './App.css';
+import { SidebarContainer, ClearCategoryButton } from './App.css';
 export default class App extends Component {
   state = {
     searchInput: '',
@@ -81,6 +81,10 @@ export default class App extends Component {
   };
 
   render() {
+    const displayClearCategory = this.state.categorySelected ? <ClearCategoryButton onClick={this.clearCategorySelectedHandler}>
+        Clear category
+      </ClearCategoryButton> : null;
+
     return (
       <div>
         <Navbar
@@ -91,9 +95,10 @@ export default class App extends Component {
         <SidebarContainer
           style={{
             position: this.state.scrolling ? 'fixed' : 'relative',
-            marginTop: this.state.scrolling ? '25.5%' : '5px',
+            marginTop: this.state.scrolling ? '25.5%' : '25px',
           }}
         >
+          {displayClearCategory}
           <Sidebar
             itemCategories={this.state.itemCategories}
             categorySelected={this.state.categorySelected}
@@ -101,8 +106,7 @@ export default class App extends Component {
             clearCategory={this.clearCategorySelectedHandler}
           />
         </SidebarContainer>
-        {this.state.searchInput}
-        <Items 
+        <Items
           items={this.state.items}
           itemsPulled={this.state.itemsPulled}
           categorySelected={this.state.categorySelected}

@@ -29,6 +29,7 @@ export default function Sidebar(props) {
                     <Item
                         id={category}
                         onClick={(e) => props.addCategory(e)}
+                        onclick
                     >
                         {category}
                     </Item>
