@@ -83,7 +83,7 @@ export default class App extends Component {
         <SidebarContainer
           style={{
             position: this.state.scrolling ? 'fixed' : 'relative',
-            marginTop: this.state.scrolling ? '40%' : '5px',
+            marginTop: this.state.scrolling ? '25.5%' : '5px',
           }}
         >
           <Sidebar itemCategories={this.state.itemCategories} />

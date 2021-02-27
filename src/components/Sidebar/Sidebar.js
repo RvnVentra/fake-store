@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SidebarItem } from './Sidebar.css';
+import { SidebarItem, Item } from './Sidebar.css';
 
 export default function Sidebar(props) {
     const itemCategoryIsLoaded = props.itemCategories ? 
@@ -8,7 +8,9 @@ export default function Sidebar(props) {
     
     if(itemCategoryIsLoaded) {
         return itemCategoryIsLoaded.map((category, index) => {
-            return <SidebarItem key={index}>{category}</SidebarItem>
+            return <SidebarItem key={index}>
+                <Item>{category}</Item>
+            </SidebarItem>
         });
     }
     else {
