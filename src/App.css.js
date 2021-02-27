@@ -8,4 +8,6 @@ export const SidebarContainer = styled.div`
     width: 125px;
     border: 1px solid black;
     margin-top: 5px;
+    margin-left: 15px;
+    transition: 0.15s linear;
 `;

@@ -5,4 +5,5 @@ export const ItemsContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-left: 145px;
 `;

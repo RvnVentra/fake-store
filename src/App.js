@@ -13,6 +13,7 @@ export default class App extends Component {
     itemCategories: null,
     itemsPulled: false,
     error: null,
+    scrolling: false,
   };
 
   async componentDidMount() {
@@ -44,6 +45,21 @@ export default class App extends Component {
       catch (e) {
         this.setState({ error: e });
       };
+
+      window.addEventListener('scroll', this.handleScroll);
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = (e) => {
+    if(window.scrollY === 0 && this.state.scrolling === true) {
+      this.setState({ scrolling: false });
+    }
+    else if(window.scrollY !== 0 && this.state.scrolling !== true) {
+      this.setState({ scrolling: true });
+    };
   };
 
   searchInputHandler = (e) => {
@@ -64,7 +80,12 @@ export default class App extends Component {
           inputHandler={this.searchInputHandler}
           clearInputHandler={this.clearSearchInputHandler}
         />
-        <SidebarContainer>
+        <SidebarContainer
+          style={{
+            position: this.state.scrolling ? 'fixed' : 'relative',
+            marginTop: this.state.scrolling ? '40%' : '5px',
+          }}
+        >
           <Sidebar itemCategories={this.state.itemCategories} />
         </SidebarContainer>
         {this.state.searchInput}
