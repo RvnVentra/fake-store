@@ -9,7 +9,9 @@ export default function Sidebar(props) {
     if(itemCategoryIsLoaded) {
         return itemCategoryIsLoaded.map((category, index) => {
             return <SidebarItem key={index}>
-                <Item>{category}</Item>
+                <Item id={category} onClick={(e) => props.categorySelectedHandler(e)}>
+                    {category}
+                </Item>
             </SidebarItem>
         });
     }

@@ -12,6 +12,7 @@ export default class App extends Component {
     items: null,
     itemCategories: null,
     itemsPulled: false,
+    categorySelected: null,
     error: null,
     scrolling: false,
   };
@@ -61,15 +62,18 @@ export default class App extends Component {
       this.setState({ scrolling: true });
     };
   };
-
   searchInputHandler = (e) => {
     let input = e.target.value;
-
     this.setState({ searchInput: input });
   };
 
   clearSearchInputHandler = () => {
     this.setState({ searchInput: '' });
+  };
+
+  categorySelectedHandler = (e) => {
+    const selected = e.target.id;
+    this.setState({ categorySelected: selected });
   };
 
   render() {
@@ -86,12 +90,16 @@ export default class App extends Component {
             marginTop: this.state.scrolling ? '25.5%' : '5px',
           }}
         >
-          <Sidebar itemCategories={this.state.itemCategories} />
+          <Sidebar
+            itemCategories={this.state.itemCategories}
+            categorySelectedHandler={this.categorySelectedHandler}
+          />
         </SidebarContainer>
         {this.state.searchInput}
         <Items 
           items={this.state.items}
           itemsPulled={this.state.itemsPulled}
+          categorySelected={this.state.categorySelected}
         />
         <Footer />
       </div>
