@@ -71,9 +71,13 @@ export default class App extends Component {
     this.setState({ searchInput: '' });
   };
 
-  categorySelectedHandler = (e) => {
+  addCategorySelectedHandler = (e) => {
     const selected = e.target.id;
     this.setState({ categorySelected: selected });
+  };
+
+  clearCategorySelectedHandler = () => {
+    this.setState({ categorySelected: null });
   };
 
   render() {
@@ -81,8 +85,8 @@ export default class App extends Component {
       <div>
         <Navbar
           searchInput={this.state.searchInput}
-          inputHandler={this.searchInputHandler}
-          clearInputHandler={this.clearSearchInputHandler}
+          input={this.searchInputHandler}
+          clearInput={this.clearSearchInputHandler}
         />
         <SidebarContainer
           style={{
@@ -92,7 +96,9 @@ export default class App extends Component {
         >
           <Sidebar
             itemCategories={this.state.itemCategories}
-            categorySelectedHandler={this.categorySelectedHandler}
+            categorySelected={this.state.categorySelected}
+            addCategory={this.addCategorySelectedHandler}
+            clearCategory={this.clearCategorySelectedHandler}
           />
         </SidebarContainer>
         {this.state.searchInput}

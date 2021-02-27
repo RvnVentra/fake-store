@@ -13,7 +13,7 @@ import {
 export default function Navbar(props) {
 
     const toggleClearInput = props.searchInput.length >= 8 ? 
-        <ClearSearch style={{visibility: 'visible'}} onClick={() => props.clearInputHandler()}>&#10005;</ClearSearch> :
+        <ClearSearch style={{visibility: 'visible'}} onClick={() => props.clearInput()}>&#10005;</ClearSearch> :
         <ClearSearch style={{visibility: 'hidden'}}>&#10005;</ClearSearch>;
 
     return (
@@ -35,7 +35,7 @@ export default function Navbar(props) {
                     <a>Home</a>
                 </li> */}
             </NavItemContainer>
-            <SearchBox onChange={props.inputHandler} value={props.searchInput} placeholder="Search..." />
+            <SearchBox onChange={props.input} value={props.searchInput} placeholder="Search..." />
             {toggleClearInput}
             <SearchButton />
         </NavbarContainer>

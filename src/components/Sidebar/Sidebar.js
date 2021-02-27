@@ -6,13 +6,34 @@ export default function Sidebar(props) {
     const itemCategoryIsLoaded = props.itemCategories ? 
         Object.keys(props.itemCategories) : null;
     
+    const categorySelectedCSS = props.categorySelected ? {
+        background: 'gray',
+        color: 'white',
+    } : null;
+
     if(itemCategoryIsLoaded) {
         return itemCategoryIsLoaded.map((category, index) => {
-            return <SidebarItem key={index}>
-                <Item id={category} onClick={(e) => props.categorySelectedHandler(e)}>
-                    {category}
-                </Item>
-            </SidebarItem>
+            if(props.categorySelected === category) {
+                return <SidebarItem key={index}>
+                    <Item
+                        id={category}
+                        onClick={(e) => props.addCategory(e)}
+                        style={categorySelectedCSS}
+                    >
+                        {category}
+                    </Item>
+                </SidebarItem>
+            }
+            else {
+                return <SidebarItem key={index}>
+                    <Item
+                        id={category}
+                        onClick={(e) => props.addCategory(e)}
+                    >
+                        {category}
+                    </Item>
+                </SidebarItem>
+            };
         });
     }
     else {
