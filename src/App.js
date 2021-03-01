@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/:id" children={<ItemDetail />}>
+          <Route path="/id=:id" children={<ItemDetail />}>
           </Route>
           <Route path="/">
             <Home />

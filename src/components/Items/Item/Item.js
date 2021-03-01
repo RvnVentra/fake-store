@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {
-    Link
-} from 'react-router-dom';
 
 import { 
     ItemContainer, 
@@ -17,7 +14,7 @@ export default class Item extends Component {
                 return (
                     <ItemContainer key={item.id}>
                         <ItemImage src={item.image} />
-                        <ItemTitle>{item.title}</ItemTitle>
+                        <ItemTitle to={`/id=${item.id}`}>{item.title}</ItemTitle>
                         <ItemPrice>${item.price.toFixed(2)}</ItemPrice>
                         {/* <p>{item.description}</p> */}
                     </ItemContainer>
@@ -29,7 +26,7 @@ export default class Item extends Component {
                 return (
                     <ItemContainer key={item.id}>
                         <ItemImage src={item.image} />
-                        <ItemTitle>{item.title}</ItemTitle>
+                        <ItemTitle to={`/id=${item.id}`}>{item.title}</ItemTitle>
                         <ItemPrice>${item.price.toFixed(2)}</ItemPrice>
                         {/* <p>{item.description}</p> */}
                     </ItemContainer>
