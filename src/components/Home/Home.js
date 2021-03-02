@@ -63,14 +63,6 @@ export default class Home extends Component {
       this.setState({ scrolling: true });
     };
   };
-  searchInputHandler = (e) => {
-    let input = e.target.value;
-    this.setState({ searchInput: input });
-  };
-
-  clearSearchInputHandler = () => {
-    this.setState({ searchInput: '' });
-  };
 
   addCategorySelectedHandler = (e) => {
     const selected = e.target.id;
@@ -88,11 +80,7 @@ export default class Home extends Component {
 
     return (
       <div>
-        <Navbar
-          searchInput={this.state.searchInput}
-          input={this.searchInputHandler}
-          clearInput={this.clearSearchInputHandler}
-        />
+        <Navbar />
         <SidebarContainer
           style={{
             position: this.state.scrolling ? 'fixed' : 'relative',
