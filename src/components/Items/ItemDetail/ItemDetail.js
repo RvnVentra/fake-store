@@ -25,8 +25,6 @@ export default function ItemDetail() {
             });
     }, []);
 
-    // const test = item[0];
-
     const itemIsLoaded = item ? <ItemContainer>
             <ItemImage src={item[0].image} />
             <ItemTitle>{item[0].title}</ItemTitle>

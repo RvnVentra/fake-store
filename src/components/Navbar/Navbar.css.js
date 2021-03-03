@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import SearchImage from '../../images/search-symbol.svg';
 import SearchImageW from '../../images/search-symbol-w.svg';
@@ -37,11 +38,20 @@ export const SearchBox = styled.input`
     border-radius: 5px;
 `;
 
-export const NavButton = styled.button`
+export const NavLink = styled(Link)`
     background: none;
     border: none;
     cursor: pointer;
     outline: none;
+    &:hover {
+        color: black;
+    };
+    &:visited {
+        color: black;
+    };
+    &:link {
+        color: black;
+    };
 `;
 
 export const NavItem = styled.li`

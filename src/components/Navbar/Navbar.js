@@ -4,7 +4,7 @@ import {
     NavbarContainer,
     NavItemContainer,
     NavItem,
-    NavButton,
+    NavLink,
     SearchBox,
     ClearSearch,
     SearchButton,
@@ -33,13 +33,13 @@ export default class Navbar extends Component {
             <NavbarContainer>
                 <NavItemContainer>
                     <NavItem>
-                        <NavButton>Home</NavButton>
+                        <NavLink to="/">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavButton>Today's Deals</NavButton>
+                        <NavLink>Today's Deals</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavButton>Categories</NavButton>
+                        <NavLink>Categories</NavLink>
                     </NavItem>
                 </NavItemContainer>
                 <SearchBox onChange={(e) => this.searchInputHandler(e)} value={this.state.input} placeholder="Search..." />
