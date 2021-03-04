@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';
 import Items from '../Items/Items';
 
-import { SidebarContainer, ClearCategoryButton } from './Home.css';
+import { MainContainer, SidebarContainer, ClearCategoryButton } from './Home.css';
 
 export default class Home extends Component {
   state = {
@@ -79,7 +79,7 @@ export default class Home extends Component {
       </ClearCategoryButton> : null;
 
     return (
-      <div>
+      <MainContainer>
         <Navbar />
         <SidebarContainer
           style={{
@@ -101,7 +101,7 @@ export default class Home extends Component {
           categorySelected={this.state.categorySelected}
         />
         <Footer />
-      </div>
+      </MainContainer>
     );
   };
 };

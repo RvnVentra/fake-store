@@ -39,7 +39,7 @@ export default function Sidebar(props) {
     }
     else {
         return (
-            <div>Loading...</div>
+            <p>Loading...</p>
         );
     };
 };

@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const MainContainer = styled.div`
+    position: relative;
+    min-height: calc(100vh - 15px);
+`;
+
 export const SidebarContainer = styled.div`
     display: flex;
     flex-direction: row;

@@ -10,6 +10,8 @@ import {
     ItemPrice,
 } from './ItemDetail.css';
 import Navbar from '../../Navbar/Navbar';
+import Loader from '../../Loader/Loader';
+import Footer from '../../Footer/Footer';
 
 export default function ItemDetail() {
     let { id } = useParams();
@@ -30,12 +32,13 @@ export default function ItemDetail() {
             <ItemTitle>{item[0].title}</ItemTitle>
             <ItemPrice>{item[0].price}</ItemPrice>
             <ItemDescription>{item[0].description}</ItemDescription>
-        </ItemContainer> : <h1>Loading</h1>;
+        </ItemContainer> : <Loader />;
 
     return (
         <div>
             <Navbar />
             {itemIsLoaded}
+            <Footer />
         </div>
     );
 };
